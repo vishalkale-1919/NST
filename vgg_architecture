@@ -1,0 +1,19 @@
+digraph VGG {
+	rankdir=TB
+	input [label="Input Image
+3 × 256 × 256" fillcolor=lightblue shape=box style="rounded,filled"]
+	conv1 [label="Conv2d
+3 → 3 | 1×1" fillcolor=lightblue shape=box style="rounded,filled"]
+	pad [label="ReflectionPad2d
+(1, 1, 1, 1)" fillcolor=lightblue shape=box style="rounded,filled"]
+	conv2 [label="Conv2d
+3 → 64 | 3×3" fillcolor=lightblue shape=box style="rounded,filled"]
+	relu [label=ReLU fillcolor=lightblue shape=box style="rounded,filled"]
+	output [label="Output
+64 × 256 × 256" fillcolor=lightblue shape=box style="rounded,filled"]
+	input -> conv1
+	conv1 -> pad
+	pad -> conv2
+	conv2 -> relu
+	relu -> output
+}

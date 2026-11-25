@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+practise.ipynb
+
+# Datasets and large archives (CRITICAL: blocks Git push if included)
+*.zip
+content_data/
+style_data/
+
+# Intermediate training artifacts & optimizer checkpoints
+experiment/**/optimizer_*.pth
+experiment/**/output_*.png
+experiment/**/decoder_[0-9].pth
+experiment/**/decoder_[0-9][0-9].pth
+# Explicitly keep only the final decoder needed by app.py:
+!experiment/experiment1/decoder_10.pth
+
+# User uploads (keep directory empty)
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Environment & OS files
+.env
+venv/
+.vscode/
+.idea/
